@@ -1,0 +1,254 @@
+html {
+    background-color: black;
+}
+
+@font-face {
+    font-family: titleFont;
+    src: url(./fonts/titlefont/BlackOpsOne-Regular.ttf);
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+
+nav {
+    width: 100%;
+    max-height: 70px;
+    /* top: 0; */
+    /* position:fixed; */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0,0,0, 0.3);
+    transition: top 300ms;
+    z-index: 3;
+}
+
+nav > h1 {
+    font-family: titleFont;
+    user-select: none;
+    margin-left: 20px;
+}
+
+nav > h1:hover {
+    cursor: pointer;
+}
+
+nav > #phoneNavButtons {
+    display: none;
+}
+
+nav > #phoneNavButtons > div {
+    border-bottom: solid 2px white;
+    width: 20px;
+}
+
+nav > #desktopNavButtons {
+    display: flex;
+}
+
+nav > #desktopNavButtons > a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    user-select: none;
+    font-weight: bold;
+}
+
+nav > #desktopNavButtons > a:hover {
+    cursor: pointer;
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 300vh;
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300vh;
+    width: 100vw;
+    background: rgba(0,0,0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog > #dialogContainer {
+    background: linear-gradient(black, purple, black);
+    border: solid 2px white;
+    width: 50vw;
+    height: 30vh;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#close {
+    display: flex;
+    justify-content: end;
+}
+
+#close > span {
+    user-select: none;
+    background-color: silver;
+    border: solid 2px gray;
+    color: white;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    height: 30px;
+    width: 30px;
+}
+
+#touchContainer {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+#touchContainer > a {
+    color: white;
+    text-decoration: none;
+}
+
+
+#generalInfo {
+    background: url(./media/logo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#generalBox, #ourWorkBox, #aboutUsBox {
+    width: 75%;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px;
+    text-shadow: purple 2px 2px;
+}
+
+#generalInfo > h1, #ourWork > h1, #aboutUs > h1 {
+    text-shadow: purple 3px 3px;
+    font-size: 60px;
+    margin-left: 20px;
+}
+
+
+#generalInfo > h1::after {
+    content: "";
+    animation-name: cedarGaming;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+#ourWork > h1::after {
+    content: "";
+    animation-name: ourWork;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+#ourWork {
+    height: 100vh;
+    background: url(./media/ourwork.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#aboutUs {
+    height: 100vh;
+    background: url(./media/aboutus.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes cedarGaming {
+    0% {
+        content: "C|";
+    }
+    
+    16% {
+        content:"Ced";
+    }
+
+    32% {
+        content:"Cedar|"
+    }
+
+    48% {
+        content:"Cedar Ga"
+    }
+
+    64% {
+        content: "Cedar Gami|"
+    }
+
+    80% {
+        content:"Cedar Gamin|"
+    }
+
+    100% {
+        content: "Cedar Gaming";
+    }
+}
+
+@keyframes ourWork {
+   0% {
+    filter: blur(10px);
+   }
+
+   100% {
+    filter: blur(0);
+   }
+}
+
+@media (min-width: 0) and (max-width: 770px) {
+    nav > #desktopNavButtons {
+        display: none;
+    }
+
+    nav > #phoneNavButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        margin-right: 30px;
+    }
+
+    #generalBox, #ourWorkBox, #aboutUsBox {
+        font-size: 3.5vw;
+        width: 80%;
+        line-height: 20px;
+    }
+}
