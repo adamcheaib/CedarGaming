@@ -133,7 +133,7 @@ main {
 
 
 #generalInfo {
-    background: url(./media/logo.png);
+    background: url(./media/LogoProtoType.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -155,6 +155,7 @@ main {
     text-shadow: purple 3px 3px;
     font-size: 60px;
     margin-left: 20px;
+    font-family: titleFont;
 }
 
 
@@ -199,23 +200,43 @@ main {
     }
     
     16% {
-        content:"Ced";
+        content:"Ce|";
     }
 
     32% {
-        content:"Cedar|"
+        content:"Ced|"
     }
 
     48% {
-        content:"Cedar Ga"
+        content:"Ceda|"
     }
 
     64% {
-        content: "Cedar Gami|"
+        content: "Cedar| "
+    }
+
+    70% {
+        content:"Cedar G|"
+    }
+
+    75% {
+        content: "Cedar Ga|"
     }
 
     80% {
-        content:"Cedar Gamin|"
+        content: "Cedar Gam|"
+    }
+
+    85% {
+        content: "Cedar Gami|"
+    }
+
+    90% {
+        content: "Cedar Gamin|"
+    }
+
+    95% {
+        content: "Cedar Gaming|"
     }
 
     100% {
@@ -246,8 +267,12 @@ main {
         margin-right: 30px;
     }
 
+    #generalInfo > h1, #ourWork > h1, #aboutUs > h1 {
+        font-size: 35px;
+    }
+
     #generalBox, #ourWorkBox, #aboutUsBox {
-        font-size: 3.5vw;
+        font-size: 3.8vw;
         width: 80%;
         line-height: 20px;
     }
